@@ -1,3 +1,5 @@
+torch
+transformers
 streamlit
 pandas
 faiss-cpu
