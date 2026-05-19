@@ -1,21 +1,167 @@
-symptoms,disease,advice
-fever cough fatigue headache,Flu,Rest drink fluids and take paracetamol
-fever chills sweating headache nausea,Malaria,Consult doctor and start antimalarial drugs
-high fever severe headache pain behind eyes,Dengue,Immediate medical attention required
-cough sore throat runny nose mild fever,Common Cold,Rest hydration and steam inhalation
-chest pain shortness of breath sweating nausea,Heart Attack,Seek emergency medical help immediately
-frequent urination increased thirst weight loss,Diabetes,Check blood sugar and consult doctor
-joint pain swelling stiffness morning pain,Arthritis,Physiotherapy and anti-inflammatory medication
-itching skin rash redness swelling,Allergy,Take antihistamines and avoid allergens
-stomach pain diarrhea vomiting dehydration,Food Poisoning,Oral rehydration and rest
-headache sensitivity to light nausea vomiting,Migraine,Rest in dark room and take prescribed medicine
-fatigue pale skin shortness of breath dizziness,Anemia,Take iron supplements and consult doctor
-fever cough night sweats weight loss,Tuberculosis,Consult doctor and start TB treatment
-burning urination frequent urination cloudy urine,Urinary Tract Infection,Drink water and take antibiotics
-sore throat difficulty swallowing swollen glands,Tonsillitis,Warm fluids and consult doctor if severe
-back pain stiffness limited mobility,Spinal Issues,Physiotherapy and posture correction
-shortness of breath wheezing chest tightness,Asthma,Use inhaler and avoid triggers
-fever stiff neck confusion sensitivity to light,Meningitis,Emergency medical attention required
-nausea vomiting abdominal pain jaundice,Hepatitis,Consult doctor and avoid alcohol
-blurred vision eye pain headache,Glaucoma,Consult ophthalmologist immediately
-persistent sadness loss of interest fatigue,Depression,Seek mental health support
+symptoms,disease,severity,advice,specialist
+fever cough fatigue headache,Flu,Low,Rest drink fluids and take paracetamol,General Physician
+fever chills sweating headache nausea,Malaria,High,Consult doctor and start antimalarial drugs,Infectious Disease Specialist
+high fever severe headache pain behind eyes,Dengue,High,Immediate medical attention required,General Physician
+cough sore throat runny nose mild fever,Common Cold,Low,Rest hydration and steam inhalation,General Physician
+chest pain shortness of breath sweating nausea,Heart Attack,Critical,Seek emergency medical help immediately,Cardiologist
+frequent urination increased thirst weight loss,Diabetes,Medium,Check blood sugar and consult doctor,Endocrinologist
+joint pain swelling stiffness morning pain,Arthritis,Medium,Physiotherapy and anti-inflammatory medication,Rheumatologist
+itching skin rash redness swelling,Allergy,Low,Take antihistamines and avoid allergens,Dermatologist
+stomach pain diarrhea vomiting dehydration,Food Poisoning,Medium,Oral rehydration and rest,Gastroenterologist
+headache sensitivity to light nausea vomiting,Migraine,Medium,Rest in dark room and take prescribed medicine,Neurologist
+fatigue pale skin shortness of breath dizziness,Anemia,Medium,Take iron supplements and consult doctor,Hematologist
+fever cough night sweats weight loss,Tuberculosis,High,Consult doctor and start TB treatment,Pulmonologist
+burning urination frequent urination cloudy urine,Urinary Tract Infection,Medium,Drink water and take antibiotics,Urologist
+sore throat difficulty swallowing swollen glands,Tonsillitis,Low,Warm fluids and consult doctor if severe,ENT Specialist
+back pain stiffness limited mobility,Spinal Issues,Medium,Physiotherapy and posture correction,Orthopedic
+shortness of breath wheezing chest tightness,Asthma,High,Use inhaler and avoid triggers,Pulmonologist
+fever stiff neck confusion sensitivity to light,Meningitis,Critical,Emergency medical attention required,Neurologist
+nausea vomiting abdominal pain jaundice,Hepatitis,High,Consult doctor and avoid alcohol,Hepatologist
+blurred vision eye pain headache,Glaucoma,High,Consult ophthalmologist immediately,Ophthalmologist
+persistent sadness loss of interest fatigue,Depression,Medium,Seek mental health support,Psychiatrist
+fever cough breathing difficulty low oxygen,COVID-19,High,Isolate hydrate and seek medical advice,Pulmonologist
+abdominal pain bloating constipation,IBS,Low,Diet modification and stress management,Gastroenterologist
+acid reflux chest burning nausea,GERD,Low,Avoid spicy foods and consult doctor,Gastroenterologist
+dry itchy cracked skin,Eczema,Low,Use moisturizer and avoid irritants,Dermatologist
+red scaly patches itching,Psoriasis,Medium,Consult dermatologist and use medicated creams,Dermatologist
+panic fear sweating rapid heartbeat,Anxiety Disorder,Medium,Practice relaxation and seek therapy,Psychiatrist
+mood swings impulsive behavior insomnia,Bipolar Disorder,High,Consult psychiatrist immediately,Psychiatrist
+memory loss confusion speech difficulty,Stroke,Critical,Seek emergency medical help,Neurologist
+tremors slow movement stiffness,Parkinsons Disease,Medium,Consult neurologist and start therapy,Neurologist
+high blood pressure headache blurred vision,Hypertension,Medium,Reduce salt intake and monitor blood pressure,Cardiologist
+chest pain irregular heartbeat dizziness,Arrhythmia,High,Consult cardiologist immediately,Cardiologist
+persistent cough blood in sputum chest pain,Lung Cancer,Critical,Immediate medical evaluation required,Oncologist
+fever rash joint pain conjunctivitis,Zika Virus,Medium,Rest hydrate and consult doctor,Infectious Disease Specialist
+high fever abdominal pain rose spots,Typhoid,High,Take antibiotics after consultation,General Physician
+abdominal cramps bloody diarrhea fever,Dysentery,High,Hydration and antibiotic treatment,Gastroenterologist
+extreme thirst dry mouth low urination,Dehydration,Medium,Increase fluid intake immediately,General Physician
+hair loss fatigue weight gain dry skin,Hypothyroidism,Medium,Check thyroid levels and consult doctor,Endocrinologist
+rapid heartbeat weight loss sweating anxiety,Hyperthyroidism,Medium,Consult endocrinologist and monitor thyroid,Endocrinologist
+leg swelling pain redness warmth,Deep Vein Thrombosis,High,Seek emergency medical attention,Vascular Specialist
+fever ear pain hearing difficulty,Ear Infection,Low,Use prescribed antibiotics and rest,ENT Specialist
+jaw pain facial swelling tooth sensitivity,Dental Abscess,Medium,Consult dentist immediately,Dentist
+snoring daytime sleepiness fatigue,Sleep Apnea,Medium,Weight management and sleep study,Pulmonologist
+loss of appetite stomach pain black stools,Stomach Ulcer,High,Avoid spicy foods and consult doctor,Gastroenterologist
+yellow skin dark urine fatigue,Liver Disease,High,Consult hepatologist and avoid alcohol,Hepatologist
+persistent thirst blurred vision fatigue,High Blood Sugar,Medium,Monitor glucose and consult doctor,Endocrinologist
+low blood sugar sweating shaking confusion,Hypoglycemia,High,Consume glucose immediately and monitor levels,Endocrinologist
+difficulty breathing swollen lips itching,Anaphylaxis,Critical,Use epinephrine and seek emergency help,Allergist
+fever fatigue swollen lymph nodes,HIV Infection,High,Get tested and consult infectious disease specialist,Infectious Disease Specialist
+muscle weakness drooping eyelids double vision,Myasthenia Gravis,High,Consult neurologist immediately,Neurologist
+severe abdominal pain vomiting fever,Appendicitis,Critical,Emergency surgery may be required,General Surgeon
+bone pain frequent fractures fatigue,Osteoporosis,Medium,Calcium vitamin D and exercise,Orthopedic
+fever painful rash burning sensation,Shingles,Medium,Antiviral medication and pain management,Dermatologist
+swollen feet fatigue shortness of breath,Kidney Disease,High,Consult nephrologist and monitor kidney function,Nephrologist
+difficulty concentrating hyperactivity impulsiveness,ADHD,Medium,Behavioral therapy and consultation,Psychiatrist
+dry cough chest tightness fatigue,Bronchitis,Medium,Rest hydration and avoid smoking,Pulmonologist
+painful urination pelvic pain fever,Kidney Infection,High,Antibiotics and increased hydration,Nephrologist
+eye redness discharge itching,Conjunctivitis,Low,Maintain hygiene and use eye drops,Ophthalmologist
+vomiting dizziness ringing ears,Vertigo,Medium,Rest and consult ENT specialist,ENT Specialist
+cold hands fatigue pale skin,Low Blood Pressure,Low,Increase fluids and monitor blood pressure,Cardiologist
+unexplained bruising bleeding fatigue,Leukemia,Critical,Immediate hematology consultation,Hematologist
+pelvic pain irregular periods acne,PCOS,Medium,Consult gynecologist and lifestyle management,Gynecologist
+fever cough chest congestion mucus,Pneumonia,High,Antibiotics and medical supervision,Pulmonologist
+painful joints butterfly rash fatigue,Lupus,High,Consult rheumatologist and monitor symptoms,Rheumatologist
+difficulty swallowing chest pain acid reflux,Esophagitis,Medium,Avoid acidic foods and consult doctor,Gastroenterologist
+excessive worry insomnia muscle tension,GAD,Medium,Relaxation techniques and therapy,Psychiatrist
+persistent fever dry cough fatigue,COVID-19,High,Isolate hydrate and consult doctor,Pulmonologist
+runny nose sneezing watery eyes,Seasonal Allergy,Low,Avoid allergens and take antihistamines,Allergist
+ear ringing dizziness hearing loss,Labyrinthitis,Medium,Consult ENT specialist,ENT Specialist
+fever body ache sore throat,Influenza,Medium,Rest hydrate and take medication,General Physician
+lower abdominal pain painful urination,Bladder Infection,Medium,Increase fluids and consult doctor,Urologist
+swollen gums bleeding gums tooth pain,Gingivitis,Low,Improve oral hygiene and visit dentist,Dentist
+difficulty breathing chest pain cough,COPD,High,Stop smoking and use inhalers,Pulmonologist
+fatigue dry skin constipation,Hypothyroidism,Medium,Check thyroid hormone levels,Endocrinologist
+excessive sweating tremors rapid pulse,Hyperthyroidism,Medium,Consult endocrinologist,Endocrinologist
+painful swallowing fever throat redness,Pharyngitis,Low,Warm fluids and antibiotics if needed,ENT Specialist
+itchy scalp hair fall dandruff,Fungal Infection,Low,Use antifungal shampoo,Dermatologist
+severe thirst confusion fruity breath,Diabetic Ketoacidosis,Critical,Emergency medical attention,Endocrinologist
+pain in lower back burning urination,Kidney Stones,High,Hydration and medical consultation,Urologist
+dry mouth fatigue blurred vision,Dehydration,Medium,Increase water intake,General Physician
+persistent sadness insomnia hopelessness,Major Depression,High,Seek psychiatric help,Psychiatrist
+rapid breathing chest tightness anxiety,Panic Attack,Medium,Relaxation techniques and therapy,Psychiatrist
+difficulty sleeping daytime fatigue,Insomnia,Low,Improve sleep hygiene,Psychiatrist
+leg pain swelling redness,DVT,High,Immediate medical consultation,Vascular Specialist
+high fever stiff muscles confusion,Tetanus,Critical,Emergency medical care,Infectious Disease Specialist
+painful skin blisters fever,Chickenpox,Medium,Rest and antiviral medication,Dermatologist
+weight gain fatigue cold intolerance,Hormonal Imbalance,Medium,Consult endocrinologist,Endocrinologist
+eye redness blurred vision discharge,Eye Infection,Low,Use prescribed eye drops,Ophthalmologist
+persistent abdominal pain bloating,Ovarian Cyst,Medium,Consult gynecologist,Gynecologist
+frequent headaches nausea dizziness,Vertigo,Medium,Consult ENT specialist,ENT Specialist
+vomiting diarrhea stomach cramps,Gastroenteritis,Medium,Hydration and bland diet,Gastroenterologist
+difficulty concentrating memory loss fatigue,Brain Fog,Medium,Rest hydration and medical evaluation,Neurologist
+joint stiffness fatigue fever,Rheumatoid Arthritis,High,Consult rheumatologist,Rheumatologist
+high fever rash red eyes,Measles,High,Isolation and medical supervision,Infectious Disease Specialist
+persistent cough wheezing mucus,Bronchitis,Medium,Rest and avoid smoking,Pulmonologist
+painful rash along nerves,Herpes Zoster,Medium,Antiviral medication,Dermatologist
+loss of smell fever cough,COVID Variant,High,Testing and isolation,Pulmonologist
+excessive hunger thirst frequent urination,Type 2 Diabetes,Medium,Monitor sugar and consult doctor,Endocrinologist
+muscle pain weakness fever,Viral Infection,Low,Rest hydration and observation,General Physician
+fainting dizziness low blood pressure,Hypotension,Medium,Increase salt and fluid intake,Cardiologist
+persistent vomiting severe dehydration,Cholera,Critical,Emergency hydration and antibiotics,Gastroenterologist
+painful menstrual cramps nausea,Dysmenorrhea,Low,Pain relief and rest,Gynecologist
+chronic fatigue muscle pain insomnia,Fibromyalgia,Medium,Exercise therapy and medication,Rheumatologist
+fever abdominal pain vomiting,Appendicitis,Critical,Emergency surgery consultation,General Surgeon
+swollen lymph nodes fever fatigue,Mononucleosis,Medium,Rest and hydration,General Physician
+night sweats weight loss swollen glands,Lymphoma,Critical,Consult oncologist immediately,Oncologist
+shortness of breath swollen ankles fatigue,Heart Failure,High,Consult cardiologist immediately,Cardiologist
+blurred vision excessive thirst fatigue,Diabetes Mellitus,Medium,Monitor glucose levels,Endocrinologist
+skin redness pus swelling,Bacterial Skin Infection,Medium,Antibiotics and hygiene,Dermatologist
+persistent diarrhea weight loss fatigue,Celiac Disease,Medium,Gluten-free diet,Gastroenterologist
+severe headache nausea stiff neck,Brain Infection,Critical,Emergency neurological care,Neurologist
+abdominal pain fever yellow eyes,Gallstones,High,Consult gastroenterologist,Gastroenterologist
+difficulty speaking facial droop weakness,Stroke,Critical,Immediate emergency help,Neurologist
+cough blood chest pain fever,Tuberculosis,High,TB treatment under supervision,Pulmonologist
+joint pain rash fever,Lyme Disease,Medium,Antibiotic therapy,Infectious Disease Specialist
+skin peeling fever rash,Stevens Johnson Syndrome,Critical,Emergency dermatology care,Dermatologist
+fever cough breathing issues,Pneumonia,High,Antibiotics and rest,Pulmonologist
+swollen painful joints redness,Gout,Medium,Reduce uric acid and medication,Rheumatologist
+burning chest pain after meals,Acid Reflux,Low,Avoid spicy foods,Gastroenterologist
+weight loss rapid heartbeat sweating,Thyroid Disorder,Medium,Consult endocrinologist,Endocrinologist
+persistent constipation abdominal bloating,Constipation,Low,Increase fiber and fluids,Gastroenterologist
+dry eyes dry mouth joint pain,Sjogrens Syndrome,Medium,Consult rheumatologist,Rheumatologist
+fever severe cough low oxygen,COVID Pneumonia,Critical,Hospitalization may be required,Pulmonologist
+painful swollen tonsils fever,Tonsil Infection,Medium,Warm fluids and antibiotics,ENT Specialist
+painful urination lower belly pain,UTI,Medium,Hydration and antibiotics,Urologist
+difficulty breathing after exercise,Exercise Induced Asthma,Medium,Use inhaler before exercise,Pulmonologist
+swelling face itching hives,Allergic Reaction,Medium,Antihistamines and avoid allergen,Allergist
+fatigue dizziness low iron,Iron Deficiency,Medium,Iron supplements and diet,Hematologist
+blood in stool abdominal pain,Ulcerative Colitis,High,Consult gastroenterologist,Gastroenterologist
+persistent sadness suicidal thoughts,Severe Depression,Critical,Immediate psychiatric support,Psychiatrist
+itching redness flaky scalp,Scalp Psoriasis,Low,Use medicated shampoo,Dermatologist
+rapid heartbeat chest discomfort,Palpitations,Medium,Monitor heart rhythm,Cardiologist
+painful eye redness blurred vision,Uveitis,High,Consult ophthalmologist,Ophthalmologist
+fever cough sore muscles,Respiratory Infection,Medium,Rest and hydration,General Physician
+difficulty swallowing chest burning,GERD,Low,Avoid acidic foods,Gastroenterologist
+muscle cramps dehydration dizziness,Heat Exhaustion,High,Cool down and hydrate immediately,Emergency Medicine
+high fever confusion seizures,Encephalitis,Critical,Emergency neurological treatment,Neurologist
+abdominal swelling yellow skin,Liver Cirrhosis,High,Avoid alcohol and consult hepatologist,Hepatologist
+itchy watery eyes sneezing,Pollen Allergy,Low,Avoid pollen exposure,Allergist
+swollen painful gums fever,Dental Infection,Medium,Dental consultation required,Dentist
+persistent fatigue low mood poor sleep,Chronic Fatigue Syndrome,Medium,Rest and therapy,General Physician
+painful breast lump discharge,Breast Infection,High,Consult gynecologist,Gynecologist
+bone pain fatigue anemia,Multiple Myeloma,Critical,Hematology consultation,Hematologist
+nausea vomiting dizziness motion sickness,Motion Sickness,Low,Rest and anti-nausea medication,General Physician
+difficulty breathing blue lips,Respiratory Failure,Critical,Emergency hospitalization,Pulmonologist
+red swollen painful eye,Conjunctivitis,Low,Use antibiotic eye drops,Ophthalmologist
+persistent thirst dry skin fatigue,Hyperglycemia,High,Monitor glucose and hydrate,Endocrinologist
+cough fever chest congestion,Chest Infection,Medium,Antibiotics and rest,Pulmonologist
+joint pain fatigue butterfly rash,Lupus,High,Consult rheumatologist,Rheumatologist
+difficulty focusing hyperactivity restlessness,ADHD,Medium,Behavioral therapy,Psychiatrist
+chronic cough mucus smoker,COPD,High,Smoking cessation and inhalers,Pulmonologist
+painful urination fever flank pain,Pyelonephritis,High,Antibiotics and hydration,Nephrologist
+muscle weakness numbness tingling,Multiple Sclerosis,High,Consult neurologist,Neurologist
+persistent fever swollen glands sore throat,Mono,Medium,Rest and hydration,General Physician
+fever severe dehydration diarrhea,Rotavirus Infection,High,Hydration therapy,Pediatrician
+painful skin abscess swelling,Boil Infection,Medium,Warm compress and antibiotics,Dermatologist
+difficulty breathing cough mucus,Chronic Bronchitis,High,Avoid smoking and consult doctor,Pulmonologist
+rapid breathing confusion chest pain,Pulmonary Embolism,Critical,Emergency medical attention,Cardiologist
+abdominal pain nausea constipation,Bowel Obstruction,Critical,Emergency surgery consultation,General Surgeon
+painful urination blood in urine,Kidney Disease,High,Consult nephrologist,Nephrologist
+sneezing congestion sinus pressure,Sinusitis,Low,Steam inhalation and rest,ENT Specialist
+difficulty moving joints swelling,Osteoarthritis,Medium,Physiotherapy and pain management,Orthopedic
+persistent fever skin rash joint pain,Autoimmune Disease,High,Consult rheumatologist,Rheumatologist
+chest pain fatigue swollen legs,Cardiomyopathy,High,Cardiology evaluation required,Cardiologist
+fever abdominal cramps diarrhea,Intestinal Infection,Medium,Hydration and antibiotics,Gastroenterologist
+persistent cough shortness of breath,Lung Disorder,High,Consult pulmonologist,Pulmonologist
+swollen neck glands sore throat,Lymph Node Infection,Medium,Consult doctor and rest,General Physician

@@ -5,63 +5,70 @@ colorFrom: blue
 colorTo: green
 sdk: streamlit
 sdk_version: "1.35.0"
-python_version: "3.10"
+python_version: "3.11"
 app_file: streamlit_app.py
 pinned: false
 ---
 
-AI-powered health symptom checker with voice input support using Speech-to-Text (STT), Retrieval-Augmented Generation (RAG), and Large Language Models.
+# 🩺 AI Health Symptom Checker
 
-Built with Streamlit, FAISS, Whisper, LangChain, and Groq Llama models.
+AI-powered medical symptom checker using:
+
+- Retrieval-Augmented Generation (RAG)
+- FAISS Vector Database
+- LangChain
+- Groq LLMs
+- Streamlit
+
+The app analyzes user symptoms and provides:
+- possible diseases
+- severity estimation
+- medical advice
+- recommended specialists
 
 ---
 
-## ✨ Features
+# ✨ Features
 
 - 🧠 AI-powered symptom analysis
-- 🎤 Voice-based symptom input
-- 🗣️ Speech-to-Text using OpenAI Whisper
 - 🔎 Retrieval-Augmented Generation (RAG)
-- 📚 FAISS vector database for medical context retrieval
-- 💻 Interactive Streamlit web interface
-- ⚠️ Medical severity estimation
-- 📋 Advice and consultation guidance
+- 📚 FAISS vector database
+- ⚠️ Severity estimation
+- 👨‍⚕️ Specialist recommendation
+- 💻 Interactive Streamlit UI
+- 🚀 Hugging Face deploy-ready
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 - Python
 - Streamlit
 - LangChain
 - FAISS
-- Whisper
 - Groq API
 - Sentence Transformers
 - HuggingFace Embeddings
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```bash
-AI-Health-Symptom-checker/
+AI-Health-Symptom-Checker/
 │
-├── app.py
-├── requirements.txt
-│
-├── utils/
-│   ├── loader.py
-│   ├── rag_chain.py
-│   ├── stt.py
-│   ├── tts.py
-│   └── vectorstore.py
-│
-├── vectorstore/
-│   ├── index.faiss
-│   └── index.pkl
+├── .streamlit/
+│   └── config.toml
 │
 ├── Data/
 │   └── symptoms_dataset.csv
 │
-└── audio/
+├── utils/
+│   ├── loader.py
+│   ├── rag_chain.py
+│   └── vectorstore.py
+│
+├── .gitignore
+├── requirements.txt
+├── README.md
+└── streamlit_app.py

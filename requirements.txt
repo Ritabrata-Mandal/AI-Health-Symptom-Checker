@@ -1,29 +1,10 @@
-# streamlit
-# pandas
-# faiss-cpu
-# langchain
-# langchain-community
-# sentence-transformers
-# python-dotenv
-# langchain-groq
-
-# openai-whisper
-# torch
-# sounddevice
-# scipy
-
-# transformers
-# accelerate
-# sentencepiece
-# safetensors
-# soundfile
-
-streamlit==1.35.0
-pandas==2.2.2
-numpy==1.26.4
-faiss-cpu==1.7.4
-langchain==0.2.16
-langchain-community==0.2.16
-langchain-groq==0.1.9
-sentence-transformers==2.7.0
-python-dotenv==1.0.1
+streamlit
+pandas
+faiss-cpu
+langchain
+langchain-community
+langchain-core
+langchain-groq
+sentence-transformers
+python-dotenv
+langchain-huggingface

@@ -1,31 +1,36 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq
-import os
 
 
 def build_chain(vectorstore):
 
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+    retriever = vectorstore.as_retriever(
+        search_kwargs={"k": 2}
+    )
 
     prompt_template = """
-    You are a medical assistant AI.
+You are an AI medical assistant.
 
-    Given the user's symptoms and the retrieved medical data, provide:
+Using the user's symptoms and the retrieved medical context,
+provide a clear medical analysis.
 
-    1. Possible diseases (top 2-3)
-    2. Explanation
-    3. Severity level (Low / Medium / High)
-    4. Advice
-    5. When to consult a doctor
+Include:
 
-    User Symptoms:
-    {question}
+1. Possible diseases (Top 2-3)
+2. Brief explanation
+3. Severity level (Low / Medium / High / Critical)
+4. Advice and precautions
+5. Recommended specialist doctor
+6. Whether immediate medical attention is needed
 
-    Medical Context:
-    {context}
+User Symptoms:
+{question}
 
-    Answer clearly and safely.
-    """
+Medical Context:
+{context}
+
+Answer in a clean and structured format.
+"""
 
     PROMPT = PromptTemplate(
         template=prompt_template,
@@ -33,35 +38,35 @@ def build_chain(vectorstore):
     )
 
     llm = ChatGroq(
-        model="llama-3.1-8b-instant", 
-        temperature=0.1,
+        model="llama-3.1-8b-instant",
+        temperature=0.1
     )
 
-    #  Manual RAG function
     def run_chain(user_query):
 
-        # Retrieve docs
         docs = retriever.invoke(user_query)
 
-        # Build context safely
         if not docs:
             context = "No relevant medical data found."
-        else:
-            context = "\n\n".join([doc.page_content[:80] for doc in docs])
 
-        # 3. Format prompt
+        else:
+            context = "\n\n".join(
+                [doc.page_content[:200] for doc in docs]
+            )
+
         final_prompt = PROMPT.format(
             context=context,
             question=user_query
         )
 
-        # 4. Call LLM
         try:
-            response = llm.invoke(final_prompt)
-            return response.content
-        except Exception as e:
-            return f"⚠️ Error: {str(e)}"
 
-        return response.content
+            response = llm.invoke(final_prompt)
+
+            return response.content
+
+        except Exception as e:
+
+            return f"⚠️ Error: {str(e)}"
 
     return run_chain
