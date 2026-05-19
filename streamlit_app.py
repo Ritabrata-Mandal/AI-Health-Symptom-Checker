@@ -1,24 +1,27 @@
 import streamlit as st
 import os
-
 from dotenv import load_dotenv
 
-from utils.vectorstore import (
-    create_vectorstore,
-    load_vectorstore
-)
+# =========================
+# INITIAL SETUP
+# =========================
 
-from utils.rag_chain import build_chain
+print("APP STARTED")
 
-from utils.stt import speech_to_text
-
-
-# Load env
 load_dotenv()
 
+os.makedirs("audio", exist_ok=True)
+
 st.set_page_config(
-    page_title="AI Health Symptom Checker"
+    page_title="AI Health Symptom Checker",
+    layout="wide"
 )
+
+print("PAGE CONFIG DONE")
+
+# =========================
+# UI
+# =========================
 
 st.title("🩺 AI Health Symptom Checker")
 
@@ -30,33 +33,21 @@ st.warning(
     "⚠️ This is NOT a medical diagnosis. Always consult a doctor."
 )
 
+print("UI LOADED")
 
-# Session state
+# =========================
+# SESSION STATE
+# =========================
+
 if "user_input" not in st.session_state:
     st.session_state.user_input = ""
 
+print("SESSION STATE READY")
 
-# Load vector DB
-if not os.path.exists(
-    "vectorstore/faiss_index/index.faiss"
-):
-
-    with st.spinner(
-        "🔄 Creating vector database..."
-    ):
-
-        vectorstore = create_vectorstore()
-
-else:
-
-    vectorstore = load_vectorstore()
-
-
-# Build RAG chain
-qa_chain = build_chain(vectorstore)
-
-
+# =========================
 # TEXT INPUT
+# =========================
+
 st.subheader("⌨️ Text Input")
 
 text_input = st.text_input(
@@ -68,33 +59,40 @@ text_input = st.text_input(
 if text_input:
     st.session_state.user_input = text_input
 
+print("TEXT INPUT READY")
 
+# =========================
 # VOICE INPUT
+# =========================
+
 st.subheader("🎤 Voice Input")
 
 audio_value = st.audio_input(
     "Record your symptoms"
 )
 
+print("AUDIO INPUT READY")
 
 if audio_value:
-
-    os.makedirs("audio", exist_ok=True)
 
     audio_path = "audio/input.wav"
 
     with open(audio_path, "wb") as f:
         f.write(audio_value.read())
 
-    #st.audio(audio_path)
-
     with st.spinner(
         "🧠 Converting speech to text..."
     ):
 
+        print("STARTING STT")
+
+        from utils.stt import speech_to_text
+
         recognized_text = speech_to_text(
             audio_path
         )
+
+        print("STT COMPLETE")
 
         st.session_state.user_input = (
             recognized_text
@@ -104,28 +102,106 @@ if audio_value:
 
     st.write(st.session_state.user_input)
 
+# =========================
+# ANALYZE BUTTON
+# =========================
 
-# ANALYZE
 if st.button("Analyze"):
 
     if st.session_state.user_input:
 
-        with st.spinner(
-            "🧠 Analyzing symptoms..."
-        ):
+        try:
 
-            response = qa_chain(
-                st.session_state.user_input
+            with st.spinner(
+                "🔄 Loading AI system..."
+            ):
+
+                print("IMPORTING VECTORSTORE")
+
+                from utils.vectorstore import (
+                    create_vectorstore,
+                    load_vectorstore
+                )
+
+                print("VECTORSTORE IMPORTED")
+
+                from utils.rag_chain import (
+                    build_chain
+                )
+
+                print("CHAIN IMPORTED")
+
+                # =========================
+                # LOAD VECTORSTORE
+                # =========================
+
+                if not os.path.exists(
+                    "vectorstore/faiss_index/index.faiss"
+                ):
+
+                    print("CREATING VECTORSTORE")
+
+                    vectorstore = create_vectorstore()
+
+                    print("VECTORSTORE CREATED")
+
+                else:
+
+                    print("LOADING VECTORSTORE")
+
+                    vectorstore = load_vectorstore()
+
+                    print("VECTORSTORE LOADED")
+
+                # =========================
+                # BUILD CHAIN
+                # =========================
+
+                print("BUILDING QA CHAIN")
+
+                qa_chain = build_chain(
+                    vectorstore
+                )
+
+                print("QA CHAIN READY")
+
+            # =========================
+            # RUN ANALYSIS
+            # =========================
+
+            with st.spinner(
+                "🧠 Analyzing symptoms..."
+            ):
+
+                print("RUNNING ANALYSIS")
+
+                response = qa_chain(
+                    st.session_state.user_input
+                )
+
+                print("ANALYSIS COMPLETE")
+
+            st.subheader("📝 AI Analysis")
+
+            st.success(
+                "Analysis Complete ✅"
             )
 
-        st.subheader("📝 AI Analysis")
+            st.markdown(response)
 
-        st.success("Analysis Complete ✅")
+        except Exception as e:
 
-        st.markdown(response)
+            st.error(
+                f"Error: {str(e)}"
+            )
+
+            print("ERROR OCCURRED")
+            print(e)
 
     else:
 
         st.error(
             "Please enter or record symptoms."
         )
+
+print("APP FULLY LOADED")
