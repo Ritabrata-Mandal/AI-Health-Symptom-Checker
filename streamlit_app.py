@@ -10,7 +10,7 @@ print("APP STARTED")
 
 load_dotenv()
 
-os.makedirs("audio", exist_ok=True)
+# os.makedirs("audio", exist_ok=True)
 
 st.set_page_config(
     page_title="AI Health Symptom Checker",
@@ -65,42 +65,42 @@ print("TEXT INPUT READY")
 # VOICE INPUT
 # =========================
 
-st.subheader("🎤 Voice Input")
+# st.subheader("🎤 Voice Input")
 
-audio_value = st.audio_input(
-    "Record your symptoms"
-)
+# audio_value = st.audio_input(
+#     "Record your symptoms"
+# )
 
-print("AUDIO INPUT READY")
+# print("AUDIO INPUT READY")
 
-if audio_value:
+# if audio_value:
 
-    audio_path = "audio/input.wav"
+#     audio_path = "audio/input.wav"
 
-    with open(audio_path, "wb") as f:
-        f.write(audio_value.read())
+#     with open(audio_path, "wb") as f:
+#         f.write(audio_value.read())
 
-    with st.spinner(
-        "🧠 Converting speech to text..."
-    ):
+#     with st.spinner(
+#         "🧠 Converting speech to text..."
+#     ):
 
-        print("STARTING STT")
+#         print("STARTING STT")
 
-        from utils.stt import speech_to_text
+#         from utils.stt import speech_to_text
 
-        recognized_text = speech_to_text(
-            audio_path
-        )
+#         recognized_text = speech_to_text(
+#             audio_path
+#         )
 
-        print("STT COMPLETE")
+#         print("STT COMPLETE")
 
-        st.session_state.user_input = (
-            recognized_text
-        )
+#         st.session_state.user_input = (
+#             recognized_text
+#         )
 
-    st.write("### Recognized Speech:")
+#     st.write("### Recognized Speech:")
 
-    st.write(st.session_state.user_input)
+#     st.write(st.session_state.user_input)
 
 # =========================
 # ANALYZE BUTTON
