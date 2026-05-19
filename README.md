@@ -1,4 +1,13 @@
-# 🩺 AI-Health-Symptom-checker
+---
+title: AI Health Symptom Checker
+emoji: 🩺
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: "1.35.0"
+app_file: streamlit_app.py
+pinned: false
+---
 
 AI-powered health symptom checker with voice input support using Speech-to-Text (STT), Retrieval-Augmented Generation (RAG), and Large Language Models.
 
