@@ -60,8 +60,10 @@ vectorstore = get_vectorstore()
 
 qa_chain = build_chain(vectorstore)
 
-user_input = st.text_input(
-    "Enter symptoms (e.g., fever, cough, headache):"
+user_input = st.text_area(
+    "Enter symptoms (e.g., fever, cough, headache):",
+    height=100,
+    placeholder="Type your symptoms here..."
 )
 
 
