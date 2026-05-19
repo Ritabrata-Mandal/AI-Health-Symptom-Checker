@@ -1,7 +1,18 @@
 import streamlit as st
 import os
+import warnings
+import logging
+
+import streamlit as st
 
 from dotenv import load_dotenv
+
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
+
+warnings.filterwarnings("ignore")
+
+logging.getLogger("transformers").setLevel(logging.ERROR)
+
 
 from utils.vectorstore import (
     create_vectorstore,
