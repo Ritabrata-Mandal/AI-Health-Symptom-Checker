@@ -1,6 +1,3 @@
-torch
-torchvision
-transformers
 streamlit
 pandas
 faiss-cpu
