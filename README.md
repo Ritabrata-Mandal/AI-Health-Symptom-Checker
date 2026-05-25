@@ -12,6 +12,10 @@ pinned: false
 
 # 🩺 AI Health Symptom Checker
 
+🌐 **Live Demo:**  
+https://huggingface.co/spaces/RitabrataMandalCSE/AI-HEALTH-SYMPTOM-CHECKER
+
+
 AI-powered medical symptom checker using:
 
 - Retrieval-Augmented Generation (RAG)
@@ -72,3 +76,5 @@ AI-Health-Symptom-Checker/
 ├── requirements.txt
 ├── README.md
 └── streamlit_app.py
+
+```
